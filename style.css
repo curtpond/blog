@@ -1,0 +1,191 @@
+/* Color palette */
+:root {
+    --green: #4a7c59;
+    --green-light: #e8f0eb;
+    --charcoal: #2d3436;
+    --gray: #636e72;
+    --white: #ffffff;
+}
+
+/* Reset and base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+    color: var(--charcoal);
+    background: var(--white);
+    line-height: 1.7;
+    font-size: 18px;
+}
+
+/* Layout */
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+    padding: 3rem 0 2rem;
+    border-bottom: 2px solid var(--green);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+}
+
+header h1 a {
+    color: var(--charcoal);
+    text-decoration: none;
+}
+
+header h1 a:hover {
+    color: var(--green);
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--gray);
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    color: var(--green);
+}
+
+/* Intro */
+.intro {
+    font-size: 1.25rem;
+    color: var(--gray);
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--green-light);
+}
+
+/* Posts list */
+.posts-section h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--green);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.post-list {
+    list-style: none;
+}
+
+.post-item {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--green-light);
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: var(--gray);
+    min-width: 120px;
+    font-family: monospace;
+}
+
+.post-title a {
+    color: var(--charcoal);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.post-title a:hover {
+    color: var(--green);
+}
+
+/* Individual post */
+article {
+    margin-top: 2rem;
+}
+
+article h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--charcoal);
+}
+
+article .post-meta {
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--green-light);
+}
+
+article .content {
+    color: var(--charcoal);
+}
+
+article .content h2 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--charcoal);
+}
+
+article .content p {
+    margin-bottom: 1.5rem;
+}
+
+article .content ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+article .content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Links */
+.back-link {
+    display: inline-block;
+    margin-top: 3rem;
+    color: var(--green);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--green);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--green);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
