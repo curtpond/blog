@@ -3,6 +3,7 @@ from fasthtml.common import *
 import frontmatter
 from pathlib import Path
 
+
 app, rt = fast_app(
     pico=False,
     hdrs=(
