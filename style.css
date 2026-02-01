@@ -61,10 +61,14 @@ nav a {
     text-decoration: none;
     margin-right: 1.5rem;
     font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
 nav a:hover {
-    color: var(--green);
+    background-color: var(--green);
+    color: var(--white);
 }
 
 /* Intro */
