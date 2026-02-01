@@ -32,12 +32,13 @@ app, rt = fast_app(
 def get_posts():
     posts_dir = Path("posts")
     posts = []
-    for f in sorted(posts_dir.glob("*.md"), reverse=True):
+    for f in posts_dir.glob("*.md"):
         if f.name.startswith("_"):
-            continue  # Skip template files
+            continue
         post = frontmatter.load(f)
         post['slug'] = f.stem
         posts.append(post)
+    posts.sort(key=lambda p: p['date'], reverse=True)
     return posts
 
 def get_post(slug):
@@ -58,7 +59,12 @@ def page_header():
 
 def page_footer():
     return Footer(
-        P("© 2026 Curtis Pond · Built with FastHTML")
+        Div(
+            A("LinkedIn", href="https://linkedin.com/in/YOUR-PROFILE"),
+            A("GitHub", href="https://github.com/YOUR-USERNAME"),
+            cls="footer-links"
+        ),
+        P("© 2026 Your Name · Built with FastHTML")
     )
 
 # Home page
@@ -163,5 +169,10 @@ def view_post(slug: str):
 @rt("/style.css")
 def styles():
     return FileResponse('style.css')
+
+# Serve images
+@rt("/images/{fname:path}")
+def serve_images(fname: str):
+    return FileResponse(f'images/{fname}')
 
 serve(host="0.0.0.0", port=int(os.environ.get("PORT", 5001)))
