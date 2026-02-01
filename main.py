@@ -3,13 +3,30 @@ from fasthtml.common import *
 import frontmatter
 from pathlib import Path
 
+# 404 handler
+def not_found(req, exc):
+    return (
+        Title("Page Not Found"),
+        Div(
+            page_header(),
+            Article(
+                H1("404 — Page Not Found"),
+                P("Sorry, the page you're looking for doesn't exist."),
+                cls="content"
+            ),
+            A("← Back to home", href="/", cls="back-link"),
+            page_footer(),
+            cls="container"
+        )
+    )
 
 app, rt = fast_app(
     pico=False,
     hdrs=(
         Link(rel='stylesheet', href='/style.css'),
         Script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"),
-    )
+    ),
+    exception_handlers={404: not_found}
 )
 
 def get_posts():
