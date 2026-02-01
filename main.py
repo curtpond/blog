@@ -34,7 +34,7 @@ def page_header():
         H1(A("Curtis Pond", href="/")),
         Nav(
             A("Writing", href="/"),
-            A("Books", href="/books"),
+            A("Reading", href="/reading"),
             A("About", href="/about"),
         )
     )
@@ -95,15 +95,15 @@ def about():
         )
     )
 
-# Books page
+# Reading page
 @rt
-def books():
+def reading():
     return (
-        Title("Books - Your Name"),
+        Title("Reading - Your Name"),
         Div(
             page_header(),
             Article(
-                H1("Books & Reading"),
+                H1("Reading"),
                 Div(
                     P("What I'm currently reading and what I've learned from it."),
                     H2("Currently Reading"),
