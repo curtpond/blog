@@ -16,6 +16,8 @@ def get_posts():
     posts_dir = Path("posts")
     posts = []
     for f in sorted(posts_dir.glob("*.md"), reverse=True):
+        if f.name.startswith("_"):
+            continue  # Skip template files
         post = frontmatter.load(f)
         post['slug'] = f.stem
         posts.append(post)
